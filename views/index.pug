@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  
+  body(style="margin: 0; background: url('/RandomPeople.jpg') center center fixed; background-size: cover; position: relative;")
+
+    div.overlay(style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: -1;")
+
+    h1(style="text-align: center; font-family: Arial, sans-serif; font-weight: bold; color: white;")= title
+
+    p(style="text-align: center; font-family: Arial, sans-serif; font-weight: bold; color: white;") Welcome to #{title}
+
+    p(style="text-align: center; font-family: Arial, sans-serif; font-weight: thin; color: white; margin: 20px; padding: 20px; background-color: rgba(0, 0, 0, 0.5); border-radius: 10px;")
+      | Welcome to home. Our home. Your potential home. It feels like home because we strive to treat our patients with that courtesy that makes it feel like they are at home. A home of hard-working individuals, that pledge to be more than just your caretaker. We here at Modern Care Technologies aim to provide our patients with the best service possible, and making them feel at home - as we have been here in Toronto since 1952.

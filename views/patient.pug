@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    h1= patient.first_name + " " + patient.last_name
+    h5 Posted by: #{patient.posted_by_name} - #{patient.posted_by_id}
+    p Gender: #{patient.gender}
+    p Date of Birth: #{patient.date_of_birth}
+    p Address: #{patient.address}
+    p Contact number: #{patient.contact_number}
+    p Reason of Visit: #{patient.reason_of_visit}
+
+    hr
+
+    //- If user logged in
+    if user
+        a.btn.btn-default(href=`/patients/edit/${patient._id}`) Edit Patient Information
+        br
+        a.btn.delete-patient(href="#", onclick=`deletePatient('${patient._id}')`) Delete Patient
+        br
+        a.btn.btn-default(href=`/patients`) Back
+
+        script.
+            function deletePatient(patientId) {
+                if (confirm('Are you sure you want to delete this patient?')) {
+                    fetch(`/patients/delete/${patientId}`, { method: 'DELETE' })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('Patient deleted successfully');
+                                window.location.href = '/patients';
+                            } else {
+                                alert('Failed to delete patient');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('An error occurred while deleting the patient');
+                        });
+                }
+            }

@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    h1= "Edit Patient Information"
+    form(method="POST", action=`/patients/edit/${patient._id}`)
+        //- First Name
+        .form-group
+            label First Name:
+            input.form-control(name="first_name", type="text", value=patient.first_name)
+
+        //- Last Name
+        .form-group
+            label Last Name:
+            input.form-control(name="last_name", type="text", value=patient.last_name)
+
+        //- Gender
+        .form-group
+            label Gender:
+            input.form-control(name="gender", type="text", value=patient.gender)
+
+        //- Date of Birth
+        .form-group
+            label Date of Birth:
+            input.form-control(name="date_of_birth", type="date", value=patient.date_of_birth)
+
+        //- Address
+        .form-group
+            label Address:
+            input.form-control(name="address", type="text", value=patient.address)
+
+        //- Contact Number
+        .form-group
+            label Contact Number:
+            input.form-control(name="contact_number", type="number", value=patient.contact_number)
+
+        //- Reason of Visit
+        .form-group
+            label Reason of Visit:
+            input.form-control(name="reason_of_visit", type="text", value=patient.reason_of_visit)
+
+        br
+        input.btn.btn-primary(type="submit", value="Submit")

@@ -1,0 +1,12 @@
+nav(style="background-color: #00095E; padding: 10px 0; text-align: center;")
+
+  a(href="/", style="color: #E0E0E0; text-transform: uppercase; text-decoration: none; font-family: Arial, sans-serif; display: inline-block; margin: 0 10px;") Home
+
+  if user
+    a(href="/users/logout", style="color: #E0E0E0; text-transform: uppercase; text-decoration: none; font-family: Arial, sans-serif; display: inline-block; margin: 0 10px;") Logout 
+    a(href="/patients", style="color: #E0E0E0; text-transform: uppercase; text-decoration: none; font-family: Arial, sans-serif; display: inline-block; margin: 0 10px;") Add New Patient
+    h2(style="color: #E0E0E0; font-family: Arial, sans-serif;") Welcome #{user.name}
+  else
+    a(href="/users/register", style="color: #E0E0E0; text-transform: uppercase; text-decoration: none; font-family: Arial, sans-serif; display: inline-block; margin: 0 10px;") Register 
+    a(href="/users/login", style="color: #E0E0E0; text-transform: uppercase; text-decoration: none; font-family: Arial, sans-serif; display: inline-block; margin: 0 10px;") Login
+  br

@@ -1,0 +1,62 @@
+extends layout
+
+block content
+    if errors
+        each error in errors
+            p(style="color:red") #{error.msg}
+
+    h1 Add Patient
+    form(method="POST", action="/patients/add")
+        label(for="first_name") First name:
+        input(name="first_name", type="text", id="first_name") 
+        br
+        br
+        label(for="last_name") Last name:
+        input(name="last_name", type="text", id="last_name") 
+        br
+        br
+        label Select gender:
+        input(name="gender", type="radio", id="Male", value="Male")
+        label(for="Male") Male 
+        input(name="gender", type="radio", id="Female", value="Female")
+        label(for="Female") Female 
+        br
+        br
+        label(for="date_of_birth") Date Of Birth:    
+        input(name="date_of_birth", type="date", id="date_of_birth")  
+        br
+        br  
+        label(for="address") Address: 
+        input(name="address", type="text", id="address")  
+        br 
+        br  
+        label(for="contact_number") Contact number:
+        input(name="contact_number", type="number", id="contact_number") 
+        br
+        br
+        label(for="reason_of_visit") Reason of visit: 
+        input(name="reason_of_visit", type="text", id="reason_of_visit")  
+        br
+        br
+        input(value="Add", type="Submit")
+
+    h2 Patients List
+    if patients && patients.length > 0
+        each patient in patients
+            div(style="border: 1px solid #ccc; margin-bottom: 10px; padding: 10px;")
+                p
+                    | Name: #{patient.first_name} #{patient.last_name}
+                p
+                    | Gender: #{patient.gender}
+                p
+                    | Date of Birth: #{patient.date_of_birth}
+                p
+                    | Address: #{patient.address}
+                p
+                    | Contact number: #{patient.contact_number}
+                p
+                    | Reason of Visit: #{patient.reason_of_visit}
+                //- Add button to go to /patients/:id
+                a.btn.btn-primary(href="/patients/" + patient._id) View Patient Information
+    else
+        p No patients available.

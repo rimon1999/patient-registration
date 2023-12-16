@@ -1,0 +1,19 @@
+nav {
+  background-color: #00095E;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-transform: uppercase;
+  margin-right: 15px;
+  font-weight: thin;
+  text-decoration: none;
+  font-family: Arial, sans-serif; /* Specify Arial as the font family */
+  transition: color 0.3s; /* Add a smooth transition effect for color changes */
+}
+
+nav a:hover {
+  color: red; /* Change the color on hover */
+}

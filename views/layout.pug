@@ -1,0 +1,20 @@
+//- Defines doctype
+doctype html
+//- Defines top-level html
+html
+  //- Start head
+  head
+    //- Define title and import stylesheet
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+
+    //- Header Banner
+    header(style="background-color: #63BBD7; padding: 20px; text-align: center; color: white;")
+      img(src="/BlueBrain.png", alt="Banner Image")
+    
+    //- Navigation Bar
+    include partials/navbar
+
+    block content
