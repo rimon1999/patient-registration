@@ -1,5 +1,5 @@
 ## Patient Registration Web Application
-Developed a comprehensive Patient Registration Application using Express.js, Passport.js, and Mongoose for efficient hospital patient management.
+Developed a comprehensive Patient Registration Application using Express.js, Passport.js, and MongoDB Atlas for efficient hospital patient management.
 
 
 Implemented secure user authentication with Passport.js, ensuring data confidentiality.
